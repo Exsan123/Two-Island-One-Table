@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Two Islands, One Table</title>
+<style>
+:root{--cream:#f5efe2;--green:#28543e;--dark:#183728;--orange:#c86a36;--soft:#ece1c6;--white:#fffaf0}
+*{box-sizing:border-box} body{margin:0;background:#ddd;font-family:Arial,sans-serif;color:var(--dark)}
+.phone{width:min(430px,100vw);min-height:100vh;margin:auto;background:var(--cream);overflow:hidden;position:relative}
+.page{display:none;min-height:100vh;padding:34px 24px 92px}.page.active{display:block}
+.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-weight:700}
+h1{font-size:42px;line-height:1.02;margin:12px 0;color:var(--green)}
+h2{font-size:30px;line-height:1.1;margin:10px 0 18px;color:var(--green)}
+h3{margin:0 0 8px;color:var(--green)} p{line-height:1.55}
+.hero{margin-top:36px}.tag{display:inline-block;background:var(--soft);padding:8px 12px;border-radius:20px;font-size:12px;margin:4px 4px 4px 0}
+.food{background:var(--green);color:white;border-radius:24px;padding:22px;margin:18px 0}
+.food .name{font-size:30px;font-weight:800}.food small{opacity:.8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.card{background:var(--white);border-radius:18px;padding:16px;box-shadow:0 4px 14px #18372812}
+.card strong{display:block;margin-bottom:5px}.wide{grid-column:1/-1}
+.btn{border:0;border-radius:16px;padding:15px 18px;font-weight:700;font-size:15px;cursor:pointer;background:var(--green);color:#fff;width:100%;margin-top:10px}
+.btn.alt{background:var(--orange)}.btn.light{background:var(--soft);color:var(--dark)}
+.note{border-left:4px solid var(--orange);padding:12px 14px;background:#fff8e9;margin:18px 0}
+.timeline{display:grid;gap:10px;margin-top:18px}.step{display:flex;gap:12px;align-items:center}.num{width:34px;height:34px;border-radius:50%;background:var(--orange);color:white;display:grid;place-items:center;font-weight:800}
+.nav{position:fixed;bottom:0;width:min(430px,100vw);background:#fffaf0eF;backdrop-filter:blur(8px);padding:12px 18px;display:flex;gap:10px;box-shadow:0 -5px 20px #0001}.nav button{flex:1;margin:0}
+.stars{font-size:28px;letter-spacing:5px;color:var(--orange)}
+.footer{font-size:12px;opacity:.6;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="phone">
+
+<section class="page active" id="home">
+<div class="eyebrow">Digital Gastronomy Experience</div>
+<div class="hero"><h1>Two Islands,<br>One Table</h1><p>A Digital Gastronomy Journey from Pontianak to Bali.</p></div>
+<div class="food"><div class="name">Discover the story behind your food.</div><p>Food • Story • Culture • Sustainability</p></div>
+<p><b>Pilih destinasi:</b></p>
+<button class="btn" onclick="go('pontianak')">PONTIANAK — Bubur Pedas</button>
+<button class="btn alt" onclick="go('bali')">BALI — Ayam Betutu</button>
+<div class="grid">
+<div class="card"><strong>Food</strong><small>Kenali makanan yang Anda santap.</small></div>
+<div class="card"><strong>Story</strong><small>Temukan cerita di balik hidangan.</small></div>
+<div class="card"><strong>Culture</strong><small>Pahami konteks budaya secara ringkas.</small></div>
+<div class="card"><strong>Sustainability</strong><small>Lihat pilihan lokal, musim, dan minim limbah.</small></div>
+</div>
+<button class="btn light" onclick="go('passport')">Gastronomy Passport →</button>
+<div class="footer">Prototype akademik — informasi produsen/detail lokal perlu diverifikasi sebelum publikasi.</div>
+</section>
+
+<section class="page" id="pontianak">
+<div class="eyebrow">Destination 01</div><h2>Pontianak</h2>
+<div class="food"><div class="name">Bubur Pedas</div><small>Contoh produk gastronomi lokal untuk prototype</small></div>
+<p>Kenali makanan bukan hanya dari rasanya, tetapi juga melalui cerita, bahan, budaya, dan pilihan keberlanjutannya.</p>
+<div class="grid">
+<div class="card"><strong>🌿 Bahan</strong><small>Kenali bahan yang digunakan dan sumbernya.</small></div>
+<div class="card"><strong>👥 Masyarakat</strong><small>Tampilkan peran pelaku lokal secara terverifikasi.</small></div>
+<div class="card wide"><strong>🏛 Budaya</strong><small>Hubungkan hidangan dengan konteks budaya tanpa membuat klaim yang tidak terverifikasi.</small></div>
+</div>
+<button class="btn" onclick="go('story')">Explore Food Story →</button>
+</section>
+
+<section class="page" id="story">
+<div class="eyebrow">Food Story</div><h2>Bubur Pedas</h2>
+<p><b>What are you eating?</b></p>
+<p>Halaman ini menjelaskan identitas hidangan secara singkat dan mudah dipahami wisatawan.</p>
+<div class="grid">
+<div class="card"><strong>Bahan</strong><small>Komponen utama, asal bahan, dan informasi yang telah diverifikasi.</small></div>
+<div class="card"><strong>Budaya</strong><small>Cerita penggunaan dan konteks lokal yang dapat dipertanggungjawabkan.</small></div>
+<div class="card wide"><strong>Masyarakat</strong><small>Ruang untuk mengenalkan produsen, UMKM, komunitas, atau pengetahuan lokal dengan atribusi yang jelas.</small></div>
+</div>
+<button class="btn" onclick="go('journey')">See Ingredient Journey →</button>
+</section>
+
+<section class="page" id="journey">
+<div class="eyebrow">Ingredient Journey</div><h2>From Source<br>to Your Table</h2>
+<div class="timeline">
+<div class="step"><div class="num">1</div><div><b>Local Source</b><br><small>Bahan lokal yang tersedia dan relevan.</small></div></div>
+<div class="step"><div class="num">2</div><div><b>Producer</b><br><small>Pelaku/pemasok dapat ditampilkan dengan atribusi.</small></div></div>
+<div class="step"><div class="num">3</div><div><b>Kitchen</b><br><small>Proses pengolahan dan pemanfaatan bahan.</small></div></div>
+<div class="step"><div class="num">4</div><div><b>Your Table</b><br><small>Wisatawan menikmati sekaligus memahami.</small></div></div>
+</div>
+<button class="btn" onclick="go('sustain')">How is it Sustainable? →</button>
+</section>
+
+<section class="page" id="sustain">
+<div class="eyebrow">Sustainability Layer</div><h2>Eat Local.<br>Understand More.</h2>
+<div class="grid">
+<div class="card"><strong>LOCAL</strong><small>Prioritaskan informasi tentang bahan dan pelaku lokal.</small></div>
+<div class="card"><strong>SEASONAL</strong><small>Tampilkan ketersediaan secara jujur dan tidak overpromise.</small></div>
+<div class="card"><strong>LESS WASTE</strong><small>Gunakan data untuk mendukung pemanfaatan bahan dan pengurangan limbah.</small></div>
+<div class="card"><strong>CULTURE</strong><small>Jaga cerita dan beri kredit pada pengetahuan/pelaku yang relevan.</small></div>
+</div>
+<div class="note"><b>Ethical digital storytelling:</b> jangan membuat cerita lokal fiktif, jangan mengambil pengetahuan tanpa atribusi, dan jelaskan keterbatasan/seasonality bila ada.</div>
+<button class="btn alt" onclick="go('explore')">Explore More →</button>
+</section>
+
+<section class="page" id="explore">
+<div class="eyebrow">Continue the Journey</div><h2>Two Islands,<br>One Table</h2>
+<div class="card"><strong>Pontianak</strong><small>Bubur Pedas · Food Story · Sustainability</small></div>
+<div class="card" style="margin-top:12px"><strong>Bali</strong><small>Ayam Betutu · Food Story · Sustainability</small></div>
+<p>Kerangka digital yang sama digunakan untuk memperkenalkan keunikan setiap destinasi — bukan menyamakan budaya.</p>
+<button class="btn alt" onclick="go('bali')">Explore Bali →</button>
+<button class="btn light" onclick="go('passport')">Save to Gastronomy Passport</button>
+</section>
+
+<section class="page" id="bali">
+<div class="eyebrow">Destination 02</div><h2>Bali</h2>
+<div class="food"><div class="name">Ayam Betutu</div><small>Contoh produk gastronomi lokal untuk prototype</small></div>
+<p>Gunakan halaman digital untuk menjelaskan makanan, konteks budaya, bahan, dan keberlanjutan secara ringkas.</p>
+<div class="grid">
+<div class="card"><strong>Food</strong><small>Kenali hidangan dan karakter utamanya.</small></div>
+<div class="card"><strong>Culture</strong><small>Hubungkan dengan konteks budaya yang telah diverifikasi.</small></div>
+<div class="card wide"><strong>Sustainability</strong><small>Tampilkan pilihan bahan lokal, seasonality, minim limbah, dan nilai bagi pelaku lokal.</small></div>
+</div>
+<button class="btn" onclick="go('passport')">Add to Gastronomy Passport →</button>
+</section>
+
+<section class="page" id="passport">
+<div class="eyebrow">Your Digital Memory</div><h2>Gastronomy<br>Passport</h2>
+<div class="card"><strong>✓ Pontianak — Bubur Pedas</strong><small>Story explored</small></div>
+<div class="card" style="margin-top:12px"><strong>○ Bali — Ayam Betutu</strong><small>Not explored yet</small></div>
+<div class="card" style="margin-top:12px"><strong>Your experience</strong><p class="stars">★★★★★</p><small>Bagaimana pengalaman Anda?</small></div>
+<button class="btn alt" onclick="go('home')">Start Again</button>
+<div class="footer">Food → Story → Culture → Experience → Memory</div>
+</section>
+
+<div class="nav">
+<button class="btn light" onclick="back()">← Back</button>
+<button class="btn" onclick="home()">Home</button>
+<button class="btn light" onclick="forward()">Next →</button>
+</div>
+</div>
+<script>
+const ids=['home','pontianak','story','journey','sustain','explore','bali','passport'];
+let i=0;
+function go(id){i=ids.indexOf(id);show()}
+function show(){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(ids[i]).classList.add('active');window.scrollTo(0,0)}
+function back(){i=Math.max(0,i-1);show()} function forward(){i=Math.min(ids.length-1,i+1);show()} function home(){i=0;show()}
+</script>
+</body></html>
